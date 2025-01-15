@@ -1,0 +1,14 @@
+# Ignore environment directory
+voice_chatbot_env/
+
+# Ignore specific large files (e.g., .mp3, .wav files, etc.)
+*.mp3
+*.wav
+*.zip
+*.tar.gz
+*.7z
+*.log
+
+AiChat/voice_chatbot_env/Lib/site-packages/sudachidict_core/resources/system.dic
+AiChat/voice_chatbot_env/Lib/site-packages/torch/lib/torch_cpu.dll
+AiChat/voice_chatbot_env/Lib/site-packages/torch/lib/dnnl.lib
