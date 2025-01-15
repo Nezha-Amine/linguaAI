@@ -6,6 +6,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import ChatBot from "../pages/ChatBot";
 import SignupForm from "../pages/SignupForm";
 import LoginForm from "../pages/LoginForm";
+import Quiz from "../pages/Quiz";
 
 export const router = createBrowserRouter([
   // Private routes
@@ -13,9 +14,19 @@ export const router = createBrowserRouter([
     element: (
       <PrivateRoutes>
         <ChatBot />
+        
       </PrivateRoutes>
     ),
     path: "/chat",
+  },
+  {
+    element: (
+      <PrivateRoutes>
+        <Quiz />
+        
+      </PrivateRoutes>
+    ),
+    path: "/quizz",
   },
   // Public routes
   {

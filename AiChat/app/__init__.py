@@ -26,9 +26,11 @@ def create_app():
     # Register blueprints
     from app.routes import auth_bp
     from app.chat_routes import chat_bp
+    from app.quizz_routes import api
 
     app.register_blueprint(auth_bp, url_prefix='/auth')
     app.register_blueprint(chat_bp, url_prefix='/chat')
+    app.register_blueprint(api, url_prefix='/api')
 
     return app
 

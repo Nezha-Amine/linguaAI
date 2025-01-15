@@ -67,7 +67,7 @@ const SignupForm = () => {
         <option value="beginner">Beginner</option>
         <option value="intermediate">Intermediate</option>
         <option value="advanced">Advanced</option>
-        <option value="don't know">Don't Know</option>
+    
       </select>
       <input
         type="password"
