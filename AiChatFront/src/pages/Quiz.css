@@ -1,128 +1,136 @@
 /* Styling for the quiz container */
 .quiz-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #F5F2FC; /* Light lavender background */
-    color: #663591; /* Deep purple text */
-    text-align: center; /* Center the text */
-    border-radius: 10px; /* Add rounded corners for a smoother look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-  }
-  
-  /* Loading spinner */
-  .loading-spinner {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-top: 20px;
-    color: #663591; /* Deep purple spinner */
-  }
-  
-  /* Centering the form content */
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* Question container */
-  .question-container {
-    margin-bottom: 20px;
-    width: 80%; /* Limit width to avoid stretching */
-    max-width: 600px; /* Set a maximum width for readability */
-    text-align: left; /* Ensure text within question is left-aligned */
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #FFFFFF; /* White background for each question */
-    border: 1px solid #E6FFE2; /* Light green border */
-    border-radius: 10px; /* Rounded corners for question box */
-    padding: 10px;
-  }
-  
-  /* Style for question and translation toggle */
-  .question-with-translation {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between question and button */
-    justify-content: center; /* Center question and translation toggle */
-  }
-  
-  /* Make the translation button smaller */
-  .translation-toggle-btn {
-    font-size: 0.8rem;
-    padding: 5px 10px;
-    margin-left: 10px;
-    cursor: pointer;
-    background-color: #FD6A04; /* Bold orange background */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  /* Button hover effect */
-  .translation-toggle-btn:hover {
-    background-color: #663591; /* Deep purple hover effect */
-  }
-  
-  /* Styling for the answer options */
-  .answer-buttons {
-    margin-top: 10px;
-    text-align: center; /* Center the answer options */
-  }
-  
-  /* Styling for each radio button label */
-  .answer-buttons label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1rem;
-    color: #663591; /* Deep purple for the labels */
-  }
-  
-  /* Styling for the correct answer button */
-  button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #FD6A04; /* Bold orange background */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  /* Button hover effect for the answer button */
-  button:hover {
-    background-color: #663591; /* Deep purple hover effect */
-  }
-  
-  /* Centering the Show/Hide Answer button and the answer text */
-  .answer-toggle-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center the button and answer content */
-    margin-top: 10px;
-  }
-  
-  .answer-toggle-container button {
-    width: 200px; /* Fixed width for consistency */
-    text-align: center; /* Ensure text inside button is centered */
-    background-color: #FD6A04; /* Bold orange */
-    color: white;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  .answer-toggle-container button:hover {
-    background-color: #663591; /* Deep purple on hover */
-  }
-  
-  .answer {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    color: #FD6A04; /* Bold orange for the answer text */
-    font-weight: bold;
-    background-color: #E6FFE2; /* Soft light green background for answers */
-    padding: 10px;
-    border-radius: 5px; /* Rounded corners for the answer box */
-  }
-  
+  padding: 40px 20px; /* Increased top and bottom padding */
+  font-family: Arial, sans-serif;
+  background-color: #F5F2FC; /* Light lavender background */
+  color: #663591; /* Deep purple text */
+  text-align: center; /* Center the text */
+  border-radius: 10px; /* Add rounded corners for a smoother look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  width: 100%; /* Full width of the parent container */
+  max-width: 800px; /* Set a maximum width */
+  margin: 40px auto; /* Added top and bottom margin for spacing */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Loading spinner */
+.loading-spinner {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #663591; /* Deep purple spinner */
+}
+
+/* Centering the form content */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Question container */
+.question-container {
+  margin-bottom: 20px;
+  width: 100%; /* Full width of the parent container */
+  max-width: 600px; /* Set a maximum width for readability */
+  text-align: left; /* Left align the question text */
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFFFFF; /* White background for each question */
+  border: 1px solid #E6FFE2; /* Light green border */
+  border-radius: 10px; /* Rounded corners for question box */
+  padding: 15px;
+  box-sizing: border-box; /* Ensure padding does not affect total width */
+}
+
+/* Style for question and translation toggle */
+.question-with-translation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between question and translation toggle */
+}
+
+/* Translation button style */
+.translation-toggle-btn {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: #FD6A04; /* Bold orange background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+/* Button hover effect */
+.translation-toggle-btn:hover {
+  background-color: #663591; /* Deep purple hover effect */
+}
+
+/* Styling for the answer options */
+.answer-buttons {
+  margin-top: 10px;
+  text-align: center; /* Center the answer options */
+}
+
+/* Styling for each radio button label */
+.answer-buttons label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #663591; /* Deep purple for the labels */
+}
+
+/* Styling for the correct answer button */
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #FD6A04; /* Bold orange background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  width: 100%; /* Make button stretch across the container */
+  max-width: 200px; /* Ensure it doesn't stretch too wide */
+}
+
+/* Button hover effect for the answer button */
+button:hover {
+  background-color: #663591; /* Deep purple hover effect */
+}
+
+/* Centering the Show/Hide Answer button and the answer text */
+.answer-toggle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the button and answer content */
+  margin-top: 10px;
+}
+
+.answer-toggle-container button {
+  width: 200px; /* Fixed width for consistency */
+  text-align: center; /* Ensure text inside button is centered */
+  background-color: #FD6A04; /* Bold orange */
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.answer-toggle-container button:hover {
+  background-color: #663591; /* Deep purple on hover */
+}
+
+.answer {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #FD6A04; /* Bold orange for the answer text */
+  font-weight: bold;
+  background-color: #E6FFE2; /* Soft light green background for answers */
+  padding: 10px;
+  border-radius: 5px; /* Rounded corners for the answer box */
+}

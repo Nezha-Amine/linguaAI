@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Quiz.css'; // Optional CSS file for styling
-
+import Menu from './Menu'; // Import the MenuBar component
 const Quiz = () => {
   const [quizData, setQuizData] = useState([]);
   const [answers, setAnswers] = useState({});
@@ -19,14 +19,26 @@ const Quiz = () => {
     const theme = urlParams.get('theme') || 'animals';
 
     // Construct the URL to fetch quiz data, dynamically including query parameters
-    const url = `api/quiz?proficiency=${proficiency}&theme=${theme}`;
+    const url = `http://localhost:5000/api/quiz?proficiency=${proficiency}&theme=${theme}`;
 
     // Fetch the quiz data from the server
     fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setQuizData(data);
-        setIsLoading(false);
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.text(); // Get the response as text first
+      })
+      .then((text) => {
+        console.log("Response text:", text); // Log the response text
+        try {
+          const data = JSON.parse(text); // Try to parse the text into JSON
+          setQuizData(data);
+          setIsLoading(false);
+        } catch (error) {
+          console.error('Error parsing JSON:', error);
+          setIsLoading(false);
+        }
       })
       .catch((error) => {
         console.error('Error fetching quiz data:', error);
@@ -59,7 +71,14 @@ const Quiz = () => {
     setScore((correctAnswers / totalQuestions) * 100); // Score as a percentage
   };
 
+  const handleLogout = () => {
+    // Implement logout logic, such as clearing user data or JWT token
+    localStorage.removeItem('userToken'); // Example: remove token from localStorage
+  };
+
   return (
+    <div>
+    <Menu onLogout={handleLogout} />
     <div className="quiz-container">
       <h1>Spanish Quiz</h1>
 
@@ -118,6 +137,7 @@ const Quiz = () => {
           )}
         </form>
       )}
+    </div>
     </div>
   );
 };

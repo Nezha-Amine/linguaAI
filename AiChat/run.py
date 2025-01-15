@@ -1,9 +1,14 @@
 import os
 from dotenv import load_dotenv
-from app import create_app
 
-# Load environment variables
-load_dotenv()
+# Explicitly load the .env file
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+print(f"Loaded MONGO_URI: {os.getenv('MONGO_URI')}")
+print(f"Loaded JWT_SECRET_KEY: {os.getenv('JWT_SECRET_KEY')}")
+
+from app import create_app
 
 app = create_app()
 

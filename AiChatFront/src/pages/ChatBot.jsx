@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Menu from './Menu'; // Import the MenuBar component
 
 const ChatBot = () => {
     const [message, setMessage] = useState('');
@@ -66,10 +67,18 @@ const ChatBot = () => {
             setIsBotLoading(false); // Ensure animation stops on error
         }
     };
+    const handleLogout = () => {
+        // Implement logout logic, such as clearing user data or JWT token
+        localStorage.removeItem('userToken'); // Example: remove token from localStorage
+      };
     
 
     return (
+
+        
         <div
+
+
             style={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -83,6 +92,8 @@ const ChatBot = () => {
                 margin: '0',
             }}
         >
+
+<Menu onLogout={handleLogout} />
             <div
                 style={{
                     display: 'flex',
