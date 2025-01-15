@@ -17,7 +17,7 @@ CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
 
 
 def generate_quiz(proficiency, theme):
-    genai.configure(api_key="AIzaSyA7081fdTQAn_W9pTjK5s0hFB6qfwdv3k8")
+    genai.configure(api_key="YOUR_API_KEY")
     model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(
         f"Generate a 10-question quiz for a Spanish language learner, proficiency {proficiency}, focusing on vocabulary and grammar. The theme is {theme}. "

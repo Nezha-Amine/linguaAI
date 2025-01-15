@@ -1,7 +1,7 @@
 import google.generativeai as genai
 
 def configure_genai():
-    api_key = "AIzaSyBiT_hGbPQNmHNdqm8etJL-EORez5irAXI" # Replace with your valid API key
+    api_key = "YOUR_API_KEY" # Replace with your valid API key
     genai.configure(api_key=api_key)
     return {
         "model_name": "gemini-1.5-flash",
@@ -40,10 +40,10 @@ def process_chat_message(message, chat_history, user_level):
     # Adjust the AI's response based on the user's level
     response_text = response.text
     if user_level == "beginner":
-        # Adjust response for beginners (e.g., simpler language or more examples)
+        # Adjust response for beginners
         response_text = f"{response_text}"
     elif user_level == "intermediate":
-        # Adjust response for intermediate (e.g., slightly more complex sentences)
+        # Adjust response for intermediate 
         response_text = f"{response_text} How would you describe this in your own words?"
 
     # Update the history with only the assistant's response
